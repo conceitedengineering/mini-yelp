@@ -4,15 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Francisco Restaurant Locator</title>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; }
         #map { height: 100vh; width: 100vw; }
+        .popup-content {
+            background-color: #000; /* Black background */
+            color: #32CD32; /* Neon green text */
+            font-family: 'Roboto Mono', monospace;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .popup-content h2 {
+            font-size: 1.25rem; /* Larger font size for headings */
+            margin-bottom: 5px;
+        }
+        .popup-content img {
+            max-width: 100%; /* Ensure images are not larger than the container */
+            border-radius: 5px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
     <div id="map"></div>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

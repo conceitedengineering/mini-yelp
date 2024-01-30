@@ -17,16 +17,18 @@ const restaurants = [
 
 const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/ohgod/clrzzgzm7001101od8effa9bd', // Replace with your Mapbox style URL
-    center: [-122.4194, 37.7749], // San Francisco coordinates
+    style: 'mapbox://styles/ohgod/clrzzgzm7001101od8effa9bd',
+    center: [-122.4194, 37.7749],
     zoom: 12
 });
 
 restaurants.forEach(restaurant => {
     const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
-        <h2 class="text-lg font-bold">${restaurant.name}</h2>
-        <p>${restaurant.description}</p>
-        ${restaurant.images.map(img => `<img src="${img}" alt="${restaurant.name} photo" class="w-full mb-2">`).join('')}
+        <div class="popup-content">
+            <h2>${restaurant.name}</h2>
+            <p>${restaurant.description}</p>
+            ${restaurant.images.map(img => `<img src="${img}" alt="${restaurant.name} photo">`).join('')}
+        </div>
     `);
 
     new mapboxgl.Marker()
