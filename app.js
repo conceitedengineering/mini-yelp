@@ -23,6 +23,13 @@ const map = new mapboxgl.Map({
 });
 
 restaurants.forEach(restaurant => {
+    const el = document.createElement('div');
+    el.className = 'marker';
+    el.style.backgroundImage = 'url(/Pin2.png)'; // Replace with your marker image
+    el.style.width = '50px'; // Marker width
+    el.style.height = '50px'; // Marker height
+    el.style.backgroundSize = 'cover';
+
     const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
         <div class="popup-content">
             <h2>${restaurant.name}</h2>
@@ -31,7 +38,7 @@ restaurants.forEach(restaurant => {
         </div>
     `);
 
-    new mapboxgl.Marker()
+    new mapboxgl.Marker(el)
         .setLngLat(restaurant.geotag)
         .setPopup(popup)
         .addTo(map);

@@ -9,13 +9,27 @@
     <style>
         body { margin: 0; }
         #map { height: 100vh; width: 100vw; }
+        .mapboxgl-popup-content {
+        padding: 0; /* Remove padding */
+        border: none; /* Remove border */
+    }
+
+    .popup-content {
+        background-color: #000; /* Black background */
+        color: #32CD32; /* Neon green text */
+        font-family: 'Roboto Mono', monospace;
+        padding: 20px; /* Adjusted padding */
+        border-radius: 5px;
+        font-size: 16px;
+        width: auto; /* Allow for responsive width */
+    }
+
+    @media (min-width: 640px) { /* Adjust for desktop */
         .popup-content {
-            background-color: #000; /* Black background */
-            color: #32CD32; /* Neon green text */
-            font-family: 'Roboto Mono', monospace;
-            padding: 10px;
-            font-size: 16px;
+            font-size: 18px;
+            padding: 25px;
         }
+    }
         .popup-content h2 {
             font-size: 1.25rem; /* Larger font size for headings */
             margin-bottom: 5px;
@@ -25,6 +39,25 @@
             border-radius: 5px;
             margin-top: 5px;
         }
+
+            /* Override default Mapbox popup styles */
+    .mapboxgl-popup {
+        border: none; /* Remove border */
+        background: none; /* Remove background */
+    }
+
+    .mapboxgl-popup .mapboxgl-popup-tip {
+        border-top-color: #000; /* Match the tip with the popup content background */
+    }
+
+    .mapboxgl-popup-close-button {
+        color: #32CD32; /* Neon green text */
+        outline: none; /* Remove focus outline */
+    }
+
+    .mapboxgl-popup-close-button:hover {
+        color: #32CD32; /* Keep the color green on hover */
+    }
     </style>
 </head>
 <body>
